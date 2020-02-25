@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:gravity="center|top"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/edt_nameId"
+        android:inputType="text"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter you name">
+
+    </EditText>
+    <EditText
+        android:id="@+id/edt_idId"
+        android:inputType="text"
+        android:layout_marginBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter you Id">
+
+    </EditText>
+    <EditText
+        android:id="@+id/edt_gradeId"
+        android:inputType="text"
+        android:layout_marginBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter you Grade">
+
+    </EditText>
+    <Button
+        android:id="@+id/submitId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#635F5F"
+        android:text="Submit">
+
+    </Button>
+
+</LinearLayout>
