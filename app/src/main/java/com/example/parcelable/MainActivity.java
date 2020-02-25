@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -24,17 +25,25 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.submitId).setOnClickListener((View view)->{
 
             String name = student_name.getText().toString();
-            String temp_id = student_id.getText().toString();
-            long id = Long.parseLong(temp_id);
+//            String temp_id = student_id.getText().toString();
+            String id = student_id.getText().toString();
             String grade = student_grade.getText().toString();
 
+            if (student_name.length()==0){
+                student_name.setError("Insert value");
+                Toast.makeText(getApplicationContext(),"Insert value",Toast.LENGTH_SHORT).show();
+                return;
+            }else if(student_id.length()==0){
+                student_id.setError("Insert value");
+                return;
+            }else if(student_grade.length()==0){
+                student_grade.setError("Insert value");
+                return;
+            }
 
             Student student = new Student(name, id, grade);
 
-
-                Intent intent = new Intent(getApplicationContext(),Details.class);
-                intent.putExtra("details_key", student);
-                startActivity(intent);
+            Details.open(MainActivity.this,student);
 
         });
     }

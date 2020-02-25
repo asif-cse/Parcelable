@@ -6,7 +6,7 @@ import android.os.Parcelable;
 class Student implements Parcelable {
 
     private String name;
-    private Long id;
+    private String id;
 
     public String getName() {
         return name;
@@ -16,11 +16,11 @@ class Student implements Parcelable {
         this.name = name;
     }
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -38,7 +38,7 @@ class Student implements Parcelable {
 
     private String grade;
 
-    public Student(String name, Long id, String grade) {
+    public Student(String name, String id, String grade) {
         this.name = name;
         this.id = id;
         this.grade = grade;
@@ -46,7 +46,7 @@ class Student implements Parcelable {
 
     protected Student(Parcel in) {
         name = in.readString();
-        id = in.readLong();
+        id = in.readString();
         grade = in.readString();
     }
 
@@ -71,7 +71,7 @@ class Student implements Parcelable {
     public void writeToParcel(Parcel dest, int flags) {
 
         dest.writeString(this.name);
-        dest.writeLong(this.id);
+        dest.writeString(this.id);
         dest.writeString(this.grade);
     }
 }

@@ -8,6 +8,12 @@ import android.widget.TextView;
 
 public class Details extends AppCompatActivity {
 
+    public static void open(AppCompatActivity activity, Student student){
+        Intent intent = new Intent(activity, Details.class);
+        intent.putExtra("details_key",student);
+        activity.startActivity(intent);
+    }
+
     private TextView student_name, student_id, student_grade;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +30,7 @@ public class Details extends AppCompatActivity {
 
         student_name.setText(student.getName());
         student_id.setText(student.getId());
+        //student_id
         student_grade.setText(student.getGrade());
 
     }
