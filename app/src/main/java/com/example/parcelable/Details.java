@@ -30,7 +30,6 @@ public class Details extends AppCompatActivity {
 
         student_name.setText(student.getName());
         student_id.setText(student.getId());
-        //student_id
         student_grade.setText(student.getGrade());
 
     }
